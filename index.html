@@ -19,7 +19,42 @@
   </head>
   <body>
     <div id="root">
-      <div class="attribution"></div>
+      <main>
+        <header>
+          <form action="#">
+            <div class="day">
+              <label for="dayBox">day</label>
+              <input type="number" name="day" id="dayBox" />
+              <span class="error"></span>
+            </div>
+            <div class="month">
+              <label for="monthBox">month</label>
+              <input type="number" name="month" id="monthBox" />
+              <span class="error"></span>
+            </div>
+            <div class="year">
+              <label for="yearBox">year</label>
+              <input type="number" name="year" id="yearBox" />
+              <span class="error"></span>
+            </div>
+          </form>
+          <button class="submit">
+            <img
+              src="assets/images/icon-arrow.svg"
+              alt="Icon-Arrow/Submit Button"
+            />
+          </button>
+        </header>
+        <section>
+          <h1 class="age-year"><span>--</span> years</h1>
+          <h1 class="age-month"><span>--</span> months</h1>
+          <h1 class="age-day"><span>--</span> days</h1>
+        </section>
+      </main>
+      <div class="attribution">
+        Coded By
+        <a href="#">M Wali</a>
+      </div>
     </div>
   </body>
 </html>

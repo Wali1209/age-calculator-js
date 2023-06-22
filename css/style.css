@@ -7,4 +7,83 @@
     --lightGrey:hsl(0, 0%, 86%);
     --smokeyGrey:hsl(0, 1%, 44%);
     --offBlack:hsl(0, 0%, 8%);
+
+    --checkBorder: 2px solid black;
+}
+body{
+
+    background-color: var(--lightGrey);
+}
+#root{
+    max-width: 1440px;
+    height: 100dvh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+/* main styling */
+main{
+    width: 52rem;
+    padding: 1rem 3rem;
+    background-color: var(--white);
+    border-radius: 1rem 1rem 8rem;
+}
+/* header Styling */
+main header{
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--lightGrey);
+    padding-bottom: 3rem;
+    position: relative;
+
+}
+header form {
+    display: flex;
+
+}
+form div{
+    display: flex;
+    flex-direction: column;
+    margin-right: 3rem;
+    text-transform: uppercase;
+    
+}
+form input{
+    width: 10rem;
+    padding: 1rem .5rem;
+    padding-left: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius:0.5rem;
+    border: 1px solid var(--lightGrey);
+}
+button.submit{
+    background-color: var(--purple);
+    border: none;
+    padding: 1.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translate(0, 3rem);
+}
+button.submit:is(:hover ,:active){
+    background-color: var(--offBlack);
+}
+/* Section styling*/
+section{
+    line-height: 6rem;
+    margin-bottom: 2rem;
+}
+section h1{
+    font-size: 5rem;
+    font-style: italic;
+    font-weight: 900;
+}
+h1 span{
+    color: var(--purple);
+    font-size: 6rem;
+    letter-spacing: 1rem;
 }

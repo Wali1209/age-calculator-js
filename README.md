@@ -43,8 +43,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [GitHub](https://github.com/Wali1209/notification-page-main)
+- Live Site URL: [Gh-pages](https://wali1209.github.io/age-calculator-js//)
 
 ## My process
 

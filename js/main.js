@@ -1,3 +1,5 @@
+// importing isDobValid 
+import {isFormValid} from "./formValidation.js"
 // Dob Submit button
 const submitBtn= document.querySelector('button.submit');
 
@@ -51,16 +53,48 @@ const updateDay = (headingDay ) =>{
     } , 20)
 }
 
+// clear error 
+const clearWarningStyle = () =>{
+    let lightGrey = 'hsl(0, 0%, 86%)';
+    let smokeyGrey = 'hsl(0, 1%, 44%)';
+    // clearing style for day box
+    day.style.borderColor = lightGrey;
+    day.previousElementSibling.style.color = smokeyGrey;
+    day.nextElementSibling.innerHTML = "";
+
+    // clearing stye for month box
+    month.style.borderColor = lightGrey;
+    month.previousElementSibling.style.color = smokeyGrey;
+    month.nextElementSibling.innerHTML = "";
+
+    // clearing stye for year box
+    year.style.borderColor = lightGrey;
+    year.previousElementSibling.style.color = smokeyGrey;
+    year.nextElementSibling.innerHTML = "";
+
+
+}
+const clearHeading = () =>{
+    ageDay.innerHTML = "<span>--<span>";
+    ageMonth.innerHTML = "<span>--<span";
+    ageYear.innerHTML = "<span>--<span";
+
+}
+
 //  when Submit button is clicked
 submitBtn.onclick = () => {
+
     // Code to execute when the button is clicked
-    
+    // clearing previous warning style when button is clicked
+    clearWarningStyle();
+    clearHeading();
     //  checking if DOB is valid or not
-    let isDobValid = true;
+    let isDobValid = isFormValid(day , month , year);
+    console.log(isDobValid)
     if( isDobValid){
         
         // getting Date of Birth
-        let dob = new Date(year.value , month.value , day.value);
+        let dob = new Date(year.value , month.value - 1 , day.value);
 
         // getting Current date
         let currentDate = new Date();
@@ -72,7 +106,7 @@ submitBtn.onclick = () => {
 
         // getting current year, month , day
         let currentYear = currentDate.getFullYear();
-        let currentMonth = currentDate.getMonth()+ 1;
+        let currentMonth = currentDate.getMonth();
         let currentDay = currentDate.getDate();
 
         // Calculating Age Year
@@ -96,7 +130,7 @@ submitBtn.onclick = () => {
             // calculating days in previous month
             var daysInPreMonth = new Date(currentYear , currentMonth - 1, 0).getDate();
         
-            var headingDay = daysInPreMonth + currentDay -dobDay
+            var headingDay = daysInPreMonth + currentDay -dobDay;
         }
 
         // rendering calculated age on the page

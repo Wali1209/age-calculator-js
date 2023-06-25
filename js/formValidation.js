@@ -1,11 +1,17 @@
 
 export const isFormValid = ( day , month , year) =>{
     let isDobValid = true;
+
+    // getting current year
     let currentYear = new Date().getFullYear();
+
     // extracting dob day,month and year
     const dobDay = day.value,
     dobMonth = month.value,
     dobyear = year.value;
+    
+    // getting number of days in current year
+    let currentMonthDays = new Date(dobyear , dobMonth , 0).getDate();
 
    console.log(dobMonth)
     // checking for day value
@@ -14,7 +20,7 @@ export const isFormValid = ( day , month , year) =>{
         DisplayErrorMessage(day , "This field is Required")
     }
     // checking whethere given day is in range or not
-   else if(!(dobDay >= 1 &&  dobDay <= 31)){
+   else if(!(dobDay >= 1 &&  dobDay <= parseInt(currentMonthDays))){
         isDobValid = false;
         DisplayErrorMessage(day , "Must be a valid day")
     }

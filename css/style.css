@@ -34,7 +34,7 @@ main{
 main header{
     margin-bottom: 2rem;
     border-bottom: 1px solid var(--lightGrey);
-    padding-bottom: 3rem;
+    padding-bottom: 2rem;
     position: relative;
 
 }
@@ -49,6 +49,13 @@ form div{
     text-transform: uppercase;
     
 }
+form label {
+    font-weight: bold;
+    font-style: italic;
+    letter-spacing: .2rem;
+    color: var(--smokeyGrey);
+
+}
 form input{
     width: 10rem;
     padding: 1rem .5rem;
@@ -57,6 +64,12 @@ form input{
     font-weight: bold;
     border-radius:0.5rem;
     border: 1px solid var(--lightGrey);
+}
+form .error{
+    color: var(--lightRed);
+    text-transform: none;
+    font-size: 0.8rem;
+    min-height: 2rem;
 }
 button.submit{
     background-color: var(--purple);
